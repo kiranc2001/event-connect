@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "07a0c382-8012-419a-a77e-c0c00c68256a",
+		"name": "Event-connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31852873",
+		"_collection_link": "https://blue-capsule-186308.postman.co/workspace/personal~756f2f54-d8bd-44e2-80b0-8fd45a7df039/collection/31852873-07a0c382-8012-419a-a77e-c0c00c68256a?action=share&source=collection_link&creator=31852873"
+	},
+	"item": [
+		{
+			"name": "user-controller",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Kiran C\", \"email\": \"kirankiki590@gmail.com\", \"password\": \"pass123\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/users/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Kiran C\", \"email\": \"kirankiki590@gmail.com\", \"password\": \"pass123\" }"
+						},
+						"url": "http://localhost:9000/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Kiran C\", \"email\": \"kirankiki590@gmail.com\", \"password\": \"pass123\" }"
+						},
+						"url": "http://localhost:9000/api/users/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"kirankiki590@gmail.com\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/users/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"otp\": \"123456\", \"newPassword\": \"newpass456\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/users/reset-password/kirankiki590@gmail.com"
+					},
+					"response": []
+				},
+				{
+					"name": "user-login-check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/users/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Controller",
+			"item": [
+				{
+					"name": "post-event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Test Event 2\", \"description\": \"Office\", \"category\": \"Social\", \"date\": \"2025-12-02T18:00:00\", \"location\": \"123 Main St\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/events"
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-events",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/events/category/Social"
+					},
+					"response": []
+				},
+				{
+					"name": "get-upcoming-events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/events/upcoming"
+					},
+					"response": []
+				},
+				{
+					"name": "get-by-description",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/events/search?q=fun",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"events",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "fun"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-events-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/events/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update-event",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"title\": \"Test Event 2\", \"description\": \"film\", \"category\": \"Social\", \"date\": \"2025-12-02T18:00:00\", \"location\": \"123 Main St\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/events/2"
+					},
+					"response": []
+				},
+				{
+					"name": "users-created-or-joined-event",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete-event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:9000/api/events/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "participant-controller",
+			"item": [
+				{
+					"name": "join-event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"eventId\": 2 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/participations/join"
+					},
+					"response": []
+				},
+				{
+					"name": "leave-event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"eventId\": 1 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/participations/leave"
+					},
+					"response": []
+				},
+				{
+					"name": "list-joined-events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/participations/joined"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat-controller",
+			"item": [
+				{
+					"name": "get-chats-of-event",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "-send-mesage-in-event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"message\": \"Hello everyone!\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:9000/api/chat/send/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin-controller",
+			"item": [
+				{
+					"name": "analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:9000/api/admin/analytics"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
