@@ -177,7 +177,7 @@ Auto-created by Hibernate:
 
 ## Contact
 
-Email – your.email@example.com
+Email – kirangowda0212@gmail.com
 
 LinkedIn - https://www.linkedin.com/in/kiran-c-gowda-2507021b9/
 
